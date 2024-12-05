@@ -3,6 +3,7 @@ import MaldivesImage from "../assets/Maldives.jpg";
 import RwandaImage from "../assets/Rwanda.jpg";
 import LondonImage from "../assets/London.jpg";
 import Mantis from "../assets/Mantis.png";
+import { ArrowUpRight } from "lucide-react";
 
 interface HolidayPackage {
   destination: string;
@@ -23,56 +24,60 @@ const HolidayPackages: React.FC = () => {
         Always Offering Amazing Holiday Packages
       </h2>
 
+      {/* Holiday Packages Grid */}
       <div className="grid md:grid-cols-3 gap-6 mb-12">
         {packages.map((pkg, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl transition-shadow"
-          >
-            {/* Image for each destination */}
+          <div key={index} className="relative group">
+            {/* Image */}
             <img
               src={pkg.image}
               alt={pkg.destination}
-              className="mx-auto mb-4 w-full h-auto object-cover rounded-md"
+              className="w-full h-64 object-cover rounded-lg"
             />
-            <div className="flex justify-between">
-              <h3 className="text-lg font-semibold mb-2">
-                {pkg.destination} Holidays
-              </h3>
-              <p className="text-lg font-bold text-green-600">
-                From ${pkg.price}
-              </p>
+
+            {/* Destination Name and Arrow */}
+            <div className="absolute bottom-4 left-4 bg-black bg-opacity-50 text-white px-4 py-2 rounded-md flex items-center space-x-2">
+              <h3 className="text-sm font-medium">{pkg.destination}</h3>
+              <ArrowUpRight size={20} />
+            </div>
+
+            {/* Price */}
+            <div className="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-4 py-2 rounded-md">
+              <span className="text-sm font-medium">From ${pkg.price}</span>
             </div>
           </div>
         ))}
       </div>
 
-      <div className="bg-white rounded-lg shadow-md p-8 flex items-center">
-        <div className="w-1/2 pr-8">
+      {/* Mantis Special Offer Section */}
+      <div className="bg-white rounded-lg shadow-md p-8 flex flex-col lg:flex-row items-center">
+        {/* Image Section */}
+        <div className="lg:w-1/2 w-full mb-6 lg:mb-0 lg:pr-8">
           <div className="h-full w-full flex items-center justify-center">
-            <span className="text-gray-500">
-              <img
-                className="w-full h-auto object-cover"
-                src={Mantis}
-                alt="Mantis"
-              />
-            </span>
+            <img
+              className="w-full h-auto object-cover rounded-md"
+              src={Mantis}
+              alt="Mantis"
+            />
           </div>
         </div>
 
-        <div className="w-1/2">
-          <h3 className="text-2xl font-bold mb-4">
+        {/* Content Section */}
+        <div className="lg:w-1/2 w-full">
+          <h3 className="text-2xl font-bold mb-4 text-center lg:text-left">
             Mantis Hotel and Resort Special Offer
           </h3>
-          <p className="text-gray-600 mb-6">
+          <p className="text-gray-600 mb-6 text-center lg:text-left">
             Looking to plan a trip and create lasting memories with loved ones?
             Well, it couldn't be better timing. Book your package with us and
             save £60 per adult and £45 per child on Mantis Hotel holidays when
             you fly with RwandAir.
           </p>
-          <button className="bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-600 transition-colors">
-            Browse Package
-          </button>
+          <div className="flex justify-center lg:justify-start">
+            <button className="bg-[#00509E] text-white px-6 py-3 rounded-md hover:bg-blue-600 transition-colors">
+              Browse Package
+            </button>
+          </div>
         </div>
       </div>
     </div>

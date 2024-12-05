@@ -7,25 +7,25 @@ const WhyBookWithUs: React.FC = () => {
       title: "Save up to 30%",
       description:
         "Unlock savings of up to 30% on your next purchase! Don't miss out on this incredible opportunity to save big.",
-      icon: <FaPercentage className="text-blue-600 text-2xl" />, // Save Icon
+      icon: <FaPercentage className="text-[#00509E] text-2xl" />, // Save Icon
     },
     {
       title: "Worldwide Coverage",
       description:
         "Enjoy worldwide coverage with our unbeatable savings offer! Wherever your destination, our discounts have you covered.",
-      icon: <FaGlobe className="text-blue-600 text-2xl" />, // Globe Icon
+      icon: <FaGlobe className="text-[#00509E] text-2xl" />, // Globe Icon
     },
     {
       title: "Collect & Spend Miles",
       description:
         "Collect and spend miles with ease! Our offer lets you earn and utilize miles for your dream holiday.",
-      icon: <FaPlane className="text-blue-600 text-2xl" />, // Plane Icon
+      icon: <FaPlane className="text-[#00509E] text-2xl" />, // Plane Icon
     },
     {
       title: "World's Safest Airline",
       description:
         "Choose the world's safest airline for peace of mind during your travels. Safety is our top priority.",
-      icon: <FaShieldAlt className="text-blue-600 text-2xl" />, // Shield Icon
+      icon: <FaShieldAlt className="text-[#00509E] text-2xl" />, // Shield Icon
     },
   ];
 

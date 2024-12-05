@@ -1,5 +1,6 @@
 import React from "react";
-import { MapPin, Calendar, Hotel } from "lucide-react";
+import { GiAirplaneDeparture } from "react-icons/gi";
+import { Moon, Calendar, Bed } from "lucide-react";
 import Thailand from "../assets/Thailand 3.png";
 import Kilimanjaro from "../assets/Kilimanjaro sm 3.png";
 import Mangalore from "../assets/Mangalore sm 2.png";
@@ -21,7 +22,7 @@ interface PackageDeal {
 const PackageDeals: React.FC = () => {
   const deals: PackageDeal[] = [
     {
-      destination: "Kamembe",
+      destination: "Kamembe exclusive offer",
       price: 1199,
       nights: 3,
       type: "Return fare all-inclusive",
@@ -31,7 +32,7 @@ const PackageDeals: React.FC = () => {
       image: Thailand,
     },
     {
-      destination: "Abu Dhabi",
+      destination: "San Francisco exclusive offer",
       price: 1199,
       nights: 3,
       type: "Return fare all-inclusive",
@@ -41,7 +42,7 @@ const PackageDeals: React.FC = () => {
       image: Kilimanjaro,
     },
     {
-      destination: "San Francisco",
+      destination: "Abu dhabi exclusive offer",
       price: 1199,
       nights: 3,
       type: "Return fare all-inclusive",
@@ -51,7 +52,7 @@ const PackageDeals: React.FC = () => {
       image: Mangalore,
     },
     {
-      destination: "South Coast",
+      destination: "South Coast exclusive offer",
       price: 1199,
       nights: 3,
       type: "Return fare all-inclusive",
@@ -61,7 +62,7 @@ const PackageDeals: React.FC = () => {
       image: Israel,
     },
     {
-      destination: "Paradisus",
+      destination: "Sheraton exclusive offer",
       price: 1199,
       nights: 3,
       type: "Return fare all-inclusive",
@@ -71,7 +72,7 @@ const PackageDeals: React.FC = () => {
       image: Fiji,
     },
     {
-      destination: "Sheraton",
+      destination: "Paradisus exclusive offer",
       price: 1199,
       nights: 3,
       type: "Return fare all-inclusive",
@@ -84,63 +85,47 @@ const PackageDeals: React.FC = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto py-12 px-4">
-      <h2 className="text-3xl font-bold text-center mb-8">
+      <h2 className="text-2xl font-bold text-center mb-8">
         Popular Package Deals
       </h2>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {deals.map((deal, index) => (
           <div
             key={index}
-            className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow"
+            className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow border"
           >
-            {/* Placeholder for destination image */}
+            {/* Destination Image */}
             <img
               src={deal.image}
               alt={deal.destination}
               className="w-full h-auto object-cover"
             />
-
             <div className="p-6">
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-2xl font-bold text-blue-800">
-                  {deal.destination}
-                </h3>
-                <span className="text-xl font-semibold text-green-600">
-                  ${deal.price}
-                </span>
-              </div>
-
-              <div className="space-y-3">
-                <div className="flex items-center text-gray-600">
-                  <MapPin className="mr-2 text-blue-500" size={20} />
-                  <span>{deal.destination} Exclusive Offer</span>
+              <h3 className="text-lg font-bold mb-3">{deal.destination}</h3>
+              <div className="space-y-2 text-sm text-gray-600">
+                <div className="flex items-center">
+                  <Moon className="mr-2 text-black" size={20} />
+                  {deal.nights} nights
                 </div>
-
-                <div className="flex items-center text-gray-600">
-                  <Calendar className="mr-2 text-blue-500" size={20} />
-                  <span>
-                    {deal.nights} nights | {deal.type}
-                  </span>
+                <div className="flex items-center">
+                  <Bed className="mr-2 text-black" size={20} />
+                  {deal.mealPlan}
                 </div>
-
-                <div className="flex items-center text-gray-600">
-                  <Hotel className="mr-2 text-blue-500" size={20} />
-                  <span>{deal.mealPlan}</span>
+                <div className="flex items-center">
+                  <Calendar className="mr-2 text-black" size={20} />
+                  Check-in: {deal.checkIn}
                 </div>
-
-                {deal.hotel && (
-                  <div className="text-sm text-gray-500 italic">
-                    Hotel: {deal.hotel}
-                  </div>
-                )}
-
-                <div className="flex items-center text-gray-600">
-                  <Calendar className="mr-2 text-blue-500" size={20} />
-                  <span>Check-in: {deal.checkIn}</span>
+                <div className="flex items-center">
+                  <GiAirplaneDeparture className="mr-2 text-black" size={20} />
+                  {deal.type}
                 </div>
               </div>
-
-              <button className="mt-6 w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition-colors">
+              <div className="flex flex-col items-end">
+                <h2 className="text-sm text-gray-500">From</h2>
+                <h2 className="text-lg font-bold">${deal.price}</h2>
+                <h2 className="text-sm text-gray-500">total per person</h2>
+              </div>
+              <button className="w-full bg-[#00509E] text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors">
                 Book Package
               </button>
             </div>

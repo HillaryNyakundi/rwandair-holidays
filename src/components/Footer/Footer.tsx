@@ -1,7 +1,21 @@
 import React from "react";
+import Google from "../../assets/Google.png";
+import App from "../../assets/App.png";
+import Badge1 from "../../assets/badge 1.png";
+import Badge2 from "../../assets/badge 2.png";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaYoutube,
+  FaPhoneAlt,
+  FaEnvelope,
+} from "react-icons/fa";
 
 const Footer: React.FC = () => {
-  const footerLinks = {
+  const footerLinks: {
+    [key: string]: (string | { icon: JSX.Element; text: string })[];
+  } = {
     "Rwandair Holidays": [
       "Home",
       "Latest Offers",
@@ -14,37 +28,80 @@ const Footer: React.FC = () => {
       "Safari",
       "All-inclusive guided tours",
     ],
-    Contact: ["+250 788 177 000", "holidays@rwandair.com"],
+    Contact: [
+      { icon: <FaPhoneAlt />, text: "+250 788 177 000" },
+      { icon: <FaEnvelope />, text: "holidays@rwandair.com" },
+    ],
   };
 
   return (
     <footer className="bg-[#00509E] text-white py-12">
-      <div className="container mx-auto px-4 grid md:grid-cols-4 gap-8">
+      {/* Upper Section: Footer Links and Contact */}
+      <div className="max-w-screen-xl mx-auto px-4 grid md:grid-cols-4 gap-8">
         {Object.entries(footerLinks).map(([section, links]) => (
           <div key={section}>
-            <h4 className="font-bold mb-4">{section}</h4>
+            <h4 className="font-bold text-lg mb-4">{section}</h4>
             <ul>
-              {links.map((link, index) => (
-                <li key={index} className="mb-2 hover:text-blue-300">
-                  <a href="#">{link}</a>
-                </li>
-              ))}
+              {links.map(
+                (
+                  link: string | { icon: JSX.Element; text: string },
+                  index: number
+                ) => (
+                  <li
+                    key={index}
+                    className="flex items-center mb-2 hover:text-blue-300"
+                  >
+                    {typeof link === "object" ? (
+                      <>
+                        <span className="mr-2 text-lg">{link.icon}</span>
+                        <a href="#">{link.text}</a>
+                      </>
+                    ) : (
+                      <a href="#">{link}</a>
+                    )}
+                  </li>
+                )
+              )}
             </ul>
           </div>
         ))}
       </div>
-      <div className="container mx-auto px-4 mt-8 pt-4 border-t border-gray-700 text-center">
-        <p>
-          &copy; {new Date().getFullYear()} RwandAir Holidays. All Rights
-          Reserved.
-        </p>
-        <div className="flex justify-center space-x-4 mt-4">
-          <a href="#" className="hover:text-blue-300">
-            Privacy Policy
-          </a>
-          <a href="#" className="hover:text-blue-300">
-            Terms of Service
-          </a>
+
+      {/* Divider */}
+      <div className="border-t border-gray-600 mt-8"></div>
+
+      {/* Bottom Section */}
+      <div className="max-w-screen-xl mx-auto px-4 mt-8 flex flex-wrap items-center justify-between space-y-4 md:space-y-0">
+        <div className="flex items-center space-x-4">
+          <p className="text-lg font-medium">
+            Travel made simpler <br />
+            Book and manage flights on the go!
+          </p>
+        </div>
+        <div className="flex space-x-4">
+          <img src={Badge1} alt="Badge 1" className="h-12 w-auto" />
+          <img src={Badge2} alt="Badge 2" className="h-12 w-auto" />
+        </div>
+        <div className="flex space-x-4">
+          <img src={Google} alt="Google Play Store" className="h-10 w-auto" />
+          <img src={App} alt="App Store" className="h-10 w-auto" />
+        </div>
+        <div className="flex items-center space-x-4">
+          <h4 className="font-bold text-lg">Follow us</h4>
+          <div className="flex space-x-4">
+            <a href="#" className="hover:text-blue-300">
+              <FaFacebookF size={24} />
+            </a>
+            <a href="#" className="hover:text-blue-300">
+              <FaTwitter size={24} />
+            </a>
+            <a href="#" className="hover:text-blue-300">
+              <FaInstagram size={24} />
+            </a>
+            <a href="#" className="hover:text-blue-300">
+              <FaYoutube size={24} />
+            </a>
+          </div>
         </div>
       </div>
     </footer>

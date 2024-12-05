@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-md sticky top-0">
+    <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo and Dropdown Menu */}
         <div
@@ -24,7 +24,9 @@ const Navbar: React.FC = () => {
           onMouseLeave={() => setShowRwandAirMenu(false)}
         >
           <div className="text-2xl font-bold font-redressed">
-            <span className="text-[#005DA8]">RwandAir |</span>
+            <span className="text-[#005DA8] hover:text-blue-500">
+              RwandAir |
+            </span>
             <span> HOLIDAYS</span>
           </div>
 

@@ -15,12 +15,12 @@ const PopularDestinationsSection: React.FC = () => {
             className="w-full h-64 object-cover rounded-lg"
           />
           {/* Heading */}
-          <h2 className="absolute top-4 left-4 text-white text-xl font-bold bg-black bg-opacity-50 px-3 py-1 rounded">
+          <h2 className="absolute bottom-4 left-4 text-white text-sm font-medium bg-black bg-opacity-50 px-3 py-1 rounded">
             Explore Rwanda
           </h2>
           {/* Arrow */}
           <ArrowUpRight
-            className="absolute top-4 right-4 text-white bg-black bg-opacity-50 p-2 rounded-full transition-transform transform group-hover:-translate-y-1 group-hover:scale-110"
+            className="absolute bottom-4 right-4 text-white bg-black bg-opacity-50 p-2 rounded-full transition-transform transform group-hover:-translate-y-1 group-hover:scale-110"
             size={32}
           />
         </div>
@@ -33,12 +33,12 @@ const PopularDestinationsSection: React.FC = () => {
             className="w-full h-64 object-cover rounded-lg"
           />
           {/* Heading */}
-          <h2 className="absolute top-4 left-4 text-white text-xl font-bold bg-black bg-opacity-50 px-3 py-1 rounded">
+          <h2 className="absolute bottom-4 left-4 text-white text-sm font-medium bg-black bg-opacity-50 px-3 py-1 rounded">
             Discover Germany
           </h2>
           {/* Arrow */}
           <ArrowUpRight
-            className="absolute top-4 right-4 text-white bg-black bg-opacity-50 p-2 rounded-full transition-transform transform group-hover:-translate-y-1 group-hover:scale-110"
+            className="absolute bottom-4 right-4 text-white bg-black bg-opacity-50 p-2 rounded-full transition-transform transform group-hover:-translate-y-1 group-hover:scale-110"
             size={32}
           />
         </div>

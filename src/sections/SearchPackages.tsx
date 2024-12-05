@@ -110,7 +110,7 @@ const SearchPackages: React.FC<SearchPackagesProps> = ({ onSearch }) => {
 
       {/* Promo Code Option */}
       <div className="mt-4 text-center">
-        <button className="text-blue-500 hover:underline">
+        <button className="text-[#00509E] hover:text-blue-500">
           + Add Promo Code
         </button>
       </div>
