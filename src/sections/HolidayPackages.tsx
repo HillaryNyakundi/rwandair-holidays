@@ -19,7 +19,7 @@ const HolidayPackages: React.FC = () => {
   ];
 
   return (
-    <div className="max-w-screen-xl mx-auto py-12 px-4 bg-gray-50">
+    <section className="max-w-screen-xl mx-auto py-12 px-4 bg-gray-50">
       <h2 className="text-xl font-bold text-center mb-8">
         Always Offering Amazing Holiday Packages
       </h2>
@@ -64,7 +64,7 @@ const HolidayPackages: React.FC = () => {
 
         {/* Content Section */}
         <div className="lg:w-1/2 w-full">
-          <h3 className="text-2xl font-bold mb-4 text-center lg:text-left">
+          <h3 className="text-base md:text-2xl font-bold mb-4 text-center lg:text-left">
             Mantis Hotel and Resort Special Offer
           </h3>
           <p className="text-gray-600 mb-6 text-center lg:text-left">
@@ -80,7 +80,7 @@ const HolidayPackages: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

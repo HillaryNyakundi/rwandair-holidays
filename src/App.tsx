@@ -15,17 +15,19 @@ const App = () => {
           <section id="home">
             <Home />
           </section>
-          <section>
+          <section id="holidays">
             <Holidays />
           </section>
-          <section>
+          <section id="deals">
             <PackageDeals />
           </section>
-          <section>
+          <section id="destinations">
             <PopularDestinations />
           </section>
         </div>
-        <Footer />
+        <section id="footer">
+          <Footer />
+        </section>
       </Router>
     </div>
   );

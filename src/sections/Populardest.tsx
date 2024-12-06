@@ -5,7 +5,7 @@ import GermanyImage from "../assets/Jamaica 2.png";
 
 const PopularDestinationsSection: React.FC = () => {
   return (
-    <div className="relative max-w-screen-xl mx-auto py-12 px-4 bg-gray-100">
+    <section className="relative max-w-screen-xl mx-auto py-12 px-4 bg-gray-100">
       <div className="grid md:grid-cols-2 gap-6">
         {/* Image 1 with heading and arrow */}
         <div className="relative group">
@@ -43,7 +43,7 @@ const PopularDestinationsSection: React.FC = () => {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

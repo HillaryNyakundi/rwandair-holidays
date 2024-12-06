@@ -21,16 +21,18 @@ const Footer: React.FC = () => {
       "Latest Offers",
       "Experience Rwanda",
       "Stopover Packages",
+      "FAQs",
     ],
-    Destinations: ["Africa", "Europe", "Asia", "Middle East", "Beach Holidays"],
+    Destinations: ["Africa", "Europe", "Asia", "Middle East"],
     "Holiday Types": [
+      "Beach Holidays",
       "Honeymoon Packages",
       "Safari",
       "All-inclusive guided tours",
     ],
     Contact: [
       { icon: <FaPhoneAlt />, text: "+250 788 177 000" },
-      { icon: <FaEnvelope />, text: "holidays@rwandair.com" },
+      { icon: <FaEnvelope />, text: "holidays@rwanda" },
     ],
   };
 
@@ -40,7 +42,9 @@ const Footer: React.FC = () => {
       <div className="max-w-screen-xl mx-auto px-4 grid md:grid-cols-4 gap-8">
         {Object.entries(footerLinks).map(([section, links]) => (
           <div key={section}>
-            <h4 className="font-bold text-lg mb-4">{section}</h4>
+            <h4 className="font-bold font-redressed text-2xl mb-4">
+              {section}
+            </h4>
             <ul>
               {links.map(
                 (
@@ -68,7 +72,7 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Divider */}
-      <div className="border-t border-gray-600 mt-8"></div>
+      <div className="border-t border-white mt-5"></div>
 
       {/* Bottom Section */}
       <div className="max-w-screen-xl mx-auto px-4 mt-8 flex flex-wrap items-center justify-between space-y-4 md:space-y-0">

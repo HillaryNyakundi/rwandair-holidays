@@ -3,7 +3,7 @@ import HolidayPackages from "../sections/HolidayPackages";
 
 const Holidays = () => {
   return (
-    <section>
+    <section id="holidays" className="min-h-screen mt-3">
       <WhyBookWithUs />
       <HolidayPackages />
     </section>

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import DestinationsDropdown from "./DestinationsDropdown";
-import HolidaysDropdown from "./HolidaysDropdown";
+import { Link } from "react-scroll";
+//import { Link } from "react-router-dom";
 import Flag from "../../assets/Flag-United-States.png";
 import { RiContactsFill } from "react-icons/ri";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
@@ -9,8 +8,6 @@ import Booking from "../Booking";
 //import SearchPackages from "../../sections/SearchPackages";
 
 const Navbar: React.FC = () => {
-  const [showHolidaysMenu, setShowHolidaysMenu] = useState(false);
-  const [showDestinationsMenu, setShowDestinationsMenu] = useState(false);
   const [showRwandAirMenu, setShowRwandAirMenu] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -27,11 +24,11 @@ const Navbar: React.FC = () => {
             <span className="text-[#005DA8] hover:text-blue-500">
               RwandAir |
             </span>
-            <span> HOLIDAYS</span>
+            <span className="hover:text-blue-500"> HOLIDAYS</span>
           </div>
 
           {showRwandAirMenu && (
-            <div className="absolute top-full left-0 mt-2 p-4 z-50">
+            <div className="absolute top-full left-0 mt-0 p-4 z-50">
               <Booking />
             </div>
           )}
@@ -49,34 +46,40 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Links */}
         <div className="hidden lg:flex items-center space-x-6">
-          <div
-            className="relative"
-            onMouseEnter={() => setShowDestinationsMenu(true)}
-            onMouseLeave={() => setShowDestinationsMenu(false)}
+          <Link
+            to="home"
+            smooth={true}
+            duration={500}
+            className="hover:text-blue-600"
           >
-            <Link to="/destinations" className="hover:text-blue-600">
-              Destinations
-            </Link>
-            {showDestinationsMenu && <DestinationsDropdown />}
-          </div>
+            Home
+          </Link>
 
-          <div
-            className="relative"
-            onMouseEnter={() => setShowHolidaysMenu(true)}
-            onMouseLeave={() => setShowHolidaysMenu(false)}
+          <Link
+            to="holidays"
+            smooth={true}
+            duration={500}
+            className="hover:text-blue-600"
           >
-            <Link to="/holidays" className="hover:text-blue-600">
-              Explore Rwanda
-            </Link>
-            {showHolidaysMenu && <HolidaysDropdown />}
-          </div>
+            Holidays
+          </Link>
 
-          <Link to="/latest-offers" className="hover:text-blue-600">
+          <Link
+            to="deals"
+            smooth={true}
+            duration={500}
+            className="hover:text-blue-600"
+          >
             Deals
           </Link>
 
-          <Link to="/latest-offers" className="hover:text-blue-600">
-            Holidays
+          <Link
+            to="destinations"
+            smooth={true}
+            duration={500}
+            className="hover:text-blue-600"
+          >
+            Destinations
           </Link>
         </div>
 
@@ -90,7 +93,14 @@ const Navbar: React.FC = () => {
           </span>
           <span className="flex items-center">
             <RiContactsFill className="mr-1" />
-            Contact Us
+            <Link
+              smooth={true}
+              duration={500}
+              to="footer"
+              className="hover:text-blue-600"
+            >
+              Contact Us
+            </Link>
           </span>
         </div>
       </div>
@@ -98,33 +108,47 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="lg:hidden bg-white shadow-md p-4">
-          <div
-            className="relative mb-4"
-            onMouseEnter={() => setShowDestinationsMenu(true)}
-            onMouseLeave={() => setShowDestinationsMenu(false)}
-          >
-            <Link to="/destinations" className="block mb-2 hover:text-blue-600">
-              Destinations
+          <div>
+            <Link
+              smooth={true}
+              duration={500}
+              to="home"
+              className="block mb-2 hover:text-blue-600"
+            >
+              Home
             </Link>
-            {showDestinationsMenu && <DestinationsDropdown />}
           </div>
 
-          <div
-            className="relative mb-4"
-            onMouseEnter={() => setShowHolidaysMenu(true)}
-            onMouseLeave={() => setShowHolidaysMenu(false)}
-          >
-            <Link to="/holidays" className="block mb-2 hover:text-blue-600">
-              Explore Rwanda
+          <div>
+            <Link
+              smooth={true}
+              duration={500}
+              to="holidays"
+              className="block mb-2 hover:text-blue-600"
+            >
+              Holidays
             </Link>
-            {showHolidaysMenu && <HolidaysDropdown />}
           </div>
 
-          <Link to="/latest-offers" className="block mb-4 hover:text-blue-600">
+          <Link
+            smooth={true}
+            duration={500}
+            to="deals"
+            className="block mb-4 hover:text-blue-600"
+          >
             Deals
           </Link>
 
-          <Link to="/footer" className="block mb-4 hover:text-blue-600">
+          <Link
+            smooth={true}
+            duration={500}
+            to="destinations"
+            className="block mb-4 hover:text-blue-600"
+          >
+            Destinations
+          </Link>
+
+          <Link to="footer" className="block mb-4 hover:text-blue-600">
             Contact Us
           </Link>
 

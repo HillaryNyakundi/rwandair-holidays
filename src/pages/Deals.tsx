@@ -2,7 +2,7 @@ import PackageDeals from "../sections/PopularPack";
 
 const Deals = () => {
   return (
-    <section>
+    <section id="deals" className="min-h-screen">
       <PackageDeals />
     </section>
   );

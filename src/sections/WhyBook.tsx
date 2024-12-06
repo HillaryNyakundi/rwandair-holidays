@@ -30,8 +30,8 @@ const WhyBookWithUs: React.FC = () => {
   ];
 
   return (
-    <div className="max-w-screen-xl mx-auto py-12 px-4">
-      <h2 className="text-3xl font-bold text-center mb-8">
+    <section className="max-w-screen-xl mx-auto py-12 px-4">
+      <h2 className=" text-base md:text-2xl font-bold text-center mb-4">
         Why Book with RwandAir Holidays
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -45,7 +45,7 @@ const WhyBookWithUs: React.FC = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
