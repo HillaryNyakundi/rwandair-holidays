@@ -33,7 +33,7 @@ const SearchPackages: React.FC<SearchPackagesProps> = ({ onSearch }) => {
   };
 
   return (
-    <div className="max-w-full px-4 sm:px-6 md:w-[700px] lg:w-[1350px] lg:mx-auto bg-white rounded-lg shadow-lg p-4 sm:p-6">
+    <div className="max-w-full px-4 sm:px-6 md:w-[700px] lg:w-[1330px] lg:mx-auto bg-white rounded-lg shadow-lg p-4 sm:p-6">
       {/* Tabs */}
       <div className="flex flex-col sm:flex-row justify-around mb-6">
         {tabs.map((tab) => (

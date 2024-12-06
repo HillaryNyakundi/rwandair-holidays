@@ -53,11 +53,11 @@ const Footer: React.FC = () => {
                 ) => (
                   <li
                     key={index}
-                    className="flex items-center mb-2 hover:text-blue-300"
+                    className="text-sm flex items-center mb-2 hover:text-blue-300"
                   >
                     {typeof link === "object" ? (
                       <>
-                        <span className="mr-2 text-lg">{link.icon}</span>
+                        <span className="mr-2 text-sm">{link.icon}</span>
                         <a href="#">{link.text}</a>
                       </>
                     ) : (
@@ -77,7 +77,7 @@ const Footer: React.FC = () => {
       {/* Bottom Section */}
       <div className="max-w-screen-xl mx-auto px-4 mt-8 flex flex-wrap items-center justify-between space-y-4 md:space-y-0">
         <div className="flex items-center space-x-4">
-          <p className="text-lg font-medium">
+          <p className="text-sm md:text-base font-medium">
             Travel made simpler <br />
             Book and manage flights on the go!
           </p>
@@ -91,7 +91,7 @@ const Footer: React.FC = () => {
           <img src={App} alt="App Store" className="h-10 w-auto" />
         </div>
         <div className="flex items-center space-x-4">
-          <h4 className="font-bold text-lg">Follow us</h4>
+          <h4 className="font-bold text-sm md:text-base">Follow us</h4>
           <div className="flex space-x-4">
             <a href="#" className="hover:text-blue-300">
               <FaFacebookF size={24} />

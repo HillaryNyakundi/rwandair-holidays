@@ -20,7 +20,7 @@ const HolidayPackages: React.FC = () => {
 
   return (
     <section className="max-w-screen-xl mx-auto py-12 px-4 bg-gray-50">
-      <h2 className="text-xl font-bold text-center mb-8">
+      <h2 className="text-base md:text-xl font-bold text-center mb-8">
         Always Offering Amazing Holiday Packages
       </h2>
 
@@ -67,14 +67,14 @@ const HolidayPackages: React.FC = () => {
           <h3 className="text-base md:text-2xl font-bold mb-4 text-center lg:text-left">
             Mantis Hotel and Resort Special Offer
           </h3>
-          <p className="text-gray-600 mb-6 text-center lg:text-left">
+          <p className="text-sm text-gray-600 mb-6 text-center lg:text-left">
             Looking to plan a trip and create lasting memories with loved ones?
             Well, it couldn't be better timing. Book your package with us and
             save £60 per adult and £45 per child on Mantis Hotel holidays when
             you fly with RwandAir.
           </p>
           <div className="flex justify-center lg:justify-start">
-            <button className="bg-[#00509E] text-white px-6 py-3 rounded-md hover:bg-blue-600 transition-colors">
+            <button className="text-sm bg-[#00509E] text-white px-6 py-3 rounded-md hover:bg-blue-600 transition-colors">
               Browse Package
             </button>
           </div>

@@ -40,8 +40,12 @@ const WhyBookWithUs: React.FC = () => {
             <div className="bg-blue-100 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
               {reason.icon}
             </div>
-            <h3 className="font-bold mb-2 text-base">{reason.title}</h3>
-            <p className="text-gray-600 text-sm">{reason.description}</p>
+            <h3 className="font-bold mb-2 md:text-base text-sm">
+              {reason.title}
+            </h3>
+            <p className="text-gray-600 md:text-sm text-xs">
+              {reason.description}
+            </p>
           </div>
         ))}
       </div>

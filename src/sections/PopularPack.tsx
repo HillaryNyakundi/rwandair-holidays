@@ -85,7 +85,7 @@ const PackageDeals: React.FC = () => {
 
   return (
     <section className="max-w-screen-xl mx-auto py-12 px-4">
-      <h2 className="text-2xl font-bold text-center mb-8">
+      <h2 className="text-base md:text-2xl font-bold text-center mb-8">
         Popular Package Deals
       </h2>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
