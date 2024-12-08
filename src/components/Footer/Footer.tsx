@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#00509E] text-white py-12">
+    <footer className="bg-[#00509E] text-white py-12 pt-[4rem]">
       {/* Upper Section: Footer Links and Contact */}
       <div className="max-w-screen-xl mx-auto px-4 grid md:grid-cols-4 gap-8">
         {Object.entries(footerLinks).map(([section, links]) => (

@@ -33,21 +33,21 @@ const SearchPackages: React.FC<SearchPackagesProps> = ({ onSearch }) => {
   };
 
   return (
-    <div className="w-[1350px] bg-white rounded-lg shadow-lg p-6">
+    <div className="max-w-full px-4 sm:px-6 md:w-[700px] lg:w-[1330px] xl:[1200px] lg:mx-auto bg-white rounded-lg shadow-lg sm:p-6">
       {/* Tabs */}
-      <div className="flex justify-around mb-2 md:mb-6">
+      <div className="flex flex-col sm:flex-row justify-around mb-6">
         {tabs.map((tab) => (
           <span
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`cursor-pointer flex items-center md:space-x-2 ${
+            className={`cursor-pointer flex items-center space-x-2 mb-2 sm:mb-0 justify-center ${
               activeTab === tab
-                ? "text-blue-600 font-semibold relative after:content-[''] after:absolute after:h-[2px] after:bg-blue-600 after:w-full after:bottom-[-5px]"
+                ? "text-blue-600 font-semibold relative sm:after:content-[''] sm:after:absolute sm:after:h-[2px] sm:after:bg-blue-600 sm:after:w-full sm:after:bottom-[-5px]"
                 : "text-gray-500"
             }`}
           >
             {tab}
-            {tab === "Flights + Hotel" && (
+            {tab === "Flights+ Hotel" && (
               <>
                 <GiCommercialAirplane className="ml-1" />
                 <FaBed />
@@ -65,9 +65,9 @@ const SearchPackages: React.FC<SearchPackagesProps> = ({ onSearch }) => {
       </div>
 
       {/* Table-Like Structure */}
-      <div className="grid grid-cols-5 border border-gray-300 rounded-lg">
+      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 border border-gray-300 rounded-lg">
         {/* Flying From */}
-        <div className="flex items-start border-r border-gray-300 p-4">
+        <div className="flex items-start border-b sm:border-b-0 sm:border-r border-gray-300 p-4">
           <div className="flex items-center justify-center w-10 h-10">
             <GiAirplaneDeparture className="text-lg text-gray-500" />
           </div>
@@ -76,7 +76,7 @@ const SearchPackages: React.FC<SearchPackagesProps> = ({ onSearch }) => {
             <select
               value={flyingFrom}
               onChange={(e) => setFlyingFrom(e.target.value)}
-              className="text-sm font-medium text-gray-900 border border-gray-300 rounded-md p-1 mt-1"
+              className="w-full text-sm font-medium text-gray-900 border border-gray-300 rounded-md p-1 mt-1"
             >
               <option>Kigali, Rwanda</option>
               <option>Frankfurt, German</option>
@@ -87,7 +87,7 @@ const SearchPackages: React.FC<SearchPackagesProps> = ({ onSearch }) => {
         </div>
 
         {/* Flying To */}
-        <div className="flex items-start border-r border-gray-300 p-4">
+        <div className="flex items-start border-b sm:border-b-0 sm:border-r border-gray-300 p-4">
           <div className="flex items-center justify-center w-10 h-10">
             <CiLocationOn className="text-lg text-gray-500" />
           </div>
@@ -96,7 +96,7 @@ const SearchPackages: React.FC<SearchPackagesProps> = ({ onSearch }) => {
             <select
               value={flyingTo}
               onChange={(e) => setFlyingTo(e.target.value)}
-              className="text-sm font-medium text-gray-900 border border-gray-300 rounded-md p-1 mt-1"
+              className="w-full text-sm font-medium text-gray-900 border border-gray-300 rounded-md p-1 mt-1"
             >
               <option>Frankfurt, German</option>
               <option>Kigali, Rwanda</option>
@@ -107,10 +107,10 @@ const SearchPackages: React.FC<SearchPackagesProps> = ({ onSearch }) => {
         </div>
 
         {/* Date Container - Departing and Returning */}
-        <div className="flex flex-col sm:col-span-2 md:col-span-1 p-4 border-b sm:border-b-0 sm:border-r border-gray-300">
-          <div className="flex space-x-2 w-full">
+        <div className="flex flex-col p-4 border-b sm:border-b-0 sm:border-r border-gray-300">
+          <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 w-full">
             {/* Departing Date */}
-            <div className="flex flex-col w-1/2">
+            <div className="flex flex-col w-full sm:w-1/2">
               <div className="flex items-center space-x-1 mb-1">
                 <CiLocationOn className="text-gray-500" />
                 <label className="text-sm text-gray-500">Departing</label>
@@ -124,7 +124,7 @@ const SearchPackages: React.FC<SearchPackagesProps> = ({ onSearch }) => {
             </div>
 
             {/* Returning Date */}
-            <div className="flex flex-col w-1/2">
+            <div className="flex flex-col w-full sm:w-1/2">
               <div className="flex items-center space-x-1 mb-1">
                 <CiLocationOn className="text-gray-500" />
                 <label className="text-sm text-gray-500">Returning</label>
@@ -140,7 +140,7 @@ const SearchPackages: React.FC<SearchPackagesProps> = ({ onSearch }) => {
         </div>
 
         {/* Travelers */}
-        <div className="flex items-start border-r border-gray-300 p-4">
+        <div className="flex items-start border-b sm:border-b-0 sm:border-r border-gray-300 p-4">
           <div className="flex items-center justify-center w-10 h-10">
             <IoMdContact className="text-lg text-gray-500" />
           </div>
@@ -149,7 +149,7 @@ const SearchPackages: React.FC<SearchPackagesProps> = ({ onSearch }) => {
             <select
               value={travelers}
               onChange={(e) => setTravelers(e.target.value)}
-              className="text-sm font-medium text-gray-900 border border-gray-300 rounded-md p-1 mt-1"
+              className="w-full text-sm font-medium text-gray-900 border border-gray-300 rounded-md p-1 mt-1"
             >
               <option>1 Room, 2 Persons</option>
               <option>2 Rooms, 4 Persons</option>
@@ -159,7 +159,7 @@ const SearchPackages: React.FC<SearchPackagesProps> = ({ onSearch }) => {
         </div>
 
         {/* Cabin Class */}
-        <div className="flex items-start border-r border-gray-300 p-4">
+        <div className="flex items-start border-b sm:border-b-0 sm:border-r border-gray-300 p-4">
           <div className="flex items-center justify-center w-10 h-10">
             <MdAirlineSeatReclineExtra className="text-lg text-gray-500" />
           </div>
@@ -168,7 +168,7 @@ const SearchPackages: React.FC<SearchPackagesProps> = ({ onSearch }) => {
             <select
               value={cabin}
               onChange={(e) => setCabin(e.target.value)}
-              className="text-sm font-medium text-gray-900 border border-gray-300 rounded-md p-1 mt-1"
+              className="w-full text-sm font-medium text-gray-900 border border-gray-300 rounded-md p-1 mt-1"
             >
               <option>First class</option>
               <option>Business class</option>
@@ -179,7 +179,7 @@ const SearchPackages: React.FC<SearchPackagesProps> = ({ onSearch }) => {
       </div>
 
       {/* Bottom Section */}
-      <div className="flex justify-between items-center mt-4">
+      <div className="flex flex-col sm:flex-row justify-between items-center mt-4 space-y-2 sm:space-y-0">
         {/* Promo Code */}
         <button className="text-blue-600 text-sm hover:underline">
           + Add promo code
@@ -188,7 +188,7 @@ const SearchPackages: React.FC<SearchPackagesProps> = ({ onSearch }) => {
         {/* Search Button */}
         <button
           onClick={handleSearch}
-          className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-500"
+          className="w-full sm:w-auto bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-500"
         >
           Search packages
         </button>

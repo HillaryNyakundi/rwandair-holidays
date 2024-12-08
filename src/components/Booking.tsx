@@ -33,7 +33,7 @@ const SearchPackages: React.FC<SearchPackagesProps> = ({ onSearch }) => {
   };
 
   return (
-    <div className="max-w-full px-4 sm:px-6 md:w-[700px] lg:w-[1330px] lg:mx-auto bg-white rounded-lg shadow-lg p-4 sm:p-6">
+    <div className="max-w-full px-4 sm:px-6 md:w-[700px] lg:w-[980px] xl:w-[1200px] lg:mx-auto bg-white rounded-lg shadow-lg sm:p-6">
       {/* Tabs */}
       <div className="flex flex-col sm:flex-row justify-around mb-6">
         {tabs.map((tab) => (
@@ -47,7 +47,7 @@ const SearchPackages: React.FC<SearchPackagesProps> = ({ onSearch }) => {
             }`}
           >
             {tab}
-            {tab === "Flights + Hotel" && (
+            {tab === "Flights+ Hotel" && (
               <>
                 <GiCommercialAirplane className="ml-1" />
                 <FaBed />
@@ -65,7 +65,7 @@ const SearchPackages: React.FC<SearchPackagesProps> = ({ onSearch }) => {
       </div>
 
       {/* Table-Like Structure */}
-      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 border border-gray-300 rounded-lg">
+      <div className="max-w-full grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 border border-gray-300 rounded-lg">
         {/* Flying From */}
         <div className="flex items-start border-b sm:border-b-0 sm:border-r border-gray-300 p-4">
           <div className="flex items-center justify-center w-10 h-10">
