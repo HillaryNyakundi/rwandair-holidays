@@ -35,12 +35,12 @@ const SearchPackages: React.FC<SearchPackagesProps> = ({ onSearch }) => {
   return (
     <div className="w-[1350px] bg-white rounded-lg shadow-lg p-6">
       {/* Tabs */}
-      <div className="flex justify-around mb-6">
+      <div className="flex justify-around mb-2 md:mb-6">
         {tabs.map((tab) => (
           <span
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`cursor-pointer flex items-center space-x-2 ${
+            className={`cursor-pointer flex items-center md:space-x-2 ${
               activeTab === tab
                 ? "text-blue-600 font-semibold relative after:content-[''] after:absolute after:h-[2px] after:bg-blue-600 after:w-full after:bottom-[-5px]"
                 : "text-gray-500"

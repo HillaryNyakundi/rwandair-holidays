@@ -2,7 +2,7 @@ import PopularDestination from "../sections/Populardest";
 
 const Destinations = () => {
   return (
-    <section id="destinations">
+    <section id="destinations" className="">
       <PopularDestination />
     </section>
   );
