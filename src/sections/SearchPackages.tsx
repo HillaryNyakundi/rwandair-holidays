@@ -47,7 +47,7 @@ const SearchPackages: React.FC<SearchPackagesProps> = ({ onSearch }) => {
             }`}
           >
             {tab}
-            {tab === "Flights+ Hotel" && (
+            {tab === "Flights + Hotel" && (
               <>
                 <GiCommercialAirplane className="ml-1" />
                 <FaBed />

@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
         ))}
       </div>
 
-      {/* Divider */}
+      {/* Border */}
       <div className="border-t border-white mt-5"></div>
 
       {/* Bottom Section */}

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import ReactFlagsSelect from "react-flags-select";
 import { Link } from "react-scroll";
 //import { Link } from "react-router-dom";
-import Flag from "../../assets/Flag-United-States.png";
+//import Flag from "../../assets/Flag-United-States.png";
 import { RiContactsFill } from "react-icons/ri";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import Booking from "../Booking";
@@ -10,6 +11,7 @@ import Booking from "../Booking";
 const Navbar: React.FC = () => {
   const [showRwandAirMenu, setShowRwandAirMenu] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [selected, setSelected] = useState("");
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
@@ -85,12 +87,15 @@ const Navbar: React.FC = () => {
 
         {/* Language and Contact */}
         <div className="hidden lg:flex items-center text-sm space-x-4">
-          <span>
-            <img src={Flag} alt="US flag" className="w-6 h-4" />
-          </span>
-          <span className="bg-gray-100 px-3 py-1 rounded-full">
-            United States - EN
-          </span>
+          <ReactFlagsSelect
+            selected={selected}
+            onSelect={(code) => setSelected(code)}
+            placeholder="Select country"
+            searchable
+            searchPlaceholder="Search country"
+            className="menu-flags"
+          />
+
           <span className="flex items-center">
             <RiContactsFill className="mr-1" />
             <Link
@@ -153,12 +158,14 @@ const Navbar: React.FC = () => {
           </Link>
 
           <div className="flex items-center space-x-4">
-            <span>
-              <img src={Flag} alt="US flag" className="w-6 h-4" />
-            </span>
-            <span className="bg-gray-100 px-3 py-1 rounded-full">
-              United States - EN
-            </span>
+            <ReactFlagsSelect
+              selected={selected}
+              onSelect={(code) => setSelected(code)}
+              placeholder="Select country"
+              searchable
+              searchPlaceholder="Search country"
+              className="menu-flags"
+            />
           </div>
         </div>
       )}
